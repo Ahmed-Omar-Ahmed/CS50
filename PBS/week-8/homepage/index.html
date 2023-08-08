@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/938e583b66.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="i-container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="Home">
+        <main>
+          <article>
+            <h1>Hello, I'm Ahmed</h1>
+            <p>
+              Hello, I am Ahmed Omar, a teenager student, who absolutely loves
+              computers, and especially anything web related, I am always eager
+              to learn and to develop new skills, to stay updated with the
+              latest technologies, I found passion in coding to the matter that
+              work is like a hobby for me. I am actively looking for new
+              challenges and new technologies to conquer.
+            </p>
+          </article>
+
+          <a href="./contact.html" class="btn btn-dark">Contact Me!</a>
+
+          <div class="marquee">
+            <ul class="marquee-content">
+              <li>
+                <span
+                  ><i
+                    class="fa-brands fa-html5"
+                    id="html"
+                    style="color: #000000"
+                  ></i
+                ></span>
+              </li>
+              <li>
+                <span
+                  ><i
+                    class="fa-brands fa-css3-alt"
+                    id="css"
+                    style="color: #000000"
+                  ></i
+                ></span>
+              </li>
+              <li>
+                <span
+                  ><i class="fa-brands fa-js" id="js" style="color: #000000"></i
+                ></span>
+              </li>
+              <li>
+                <span
+                  ><i
+                    class="fa-brands fa-bootstrap"
+                    id="bootstrap"
+                    style="color: #000000"
+                  ></i
+                ></span>
+              </li>
+              <li>
+                <span
+                  ><i
+                    class="fa-brands fa-react"
+                    id="react"
+                    style="color: #000000"
+                  ></i
+                ></span>
+              </li>
+              <li>
+                <span
+                  ><i
+                    class="fa-brands fa-docker"
+                    id="docker"
+                    style="color: #000000"
+                  ></i
+                ></span>
+              </li>
+            </ul>
+          </div>
+        </main>
+        <aside>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ahmed-omar-6776b91a4/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin" style="color: #000000"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Ahmed-Omar-Ahmed/Ahmed-Omar-Ahmed"
+                target="_blank"
+                ><i class="fa-brands fa-github" style="color: #000000"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100006321690354"
+                target="_blank"
+                ><i class="fa-brands fa-facebook" style="color: #000000"></i
+              ></a>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </div>
+  </body>
+  <script defer>
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    const marqueeContent = document.querySelector("ul.marquee-content");
+
+    root.style.setProperty(
+      "--marquee-elements",
+      marqueeContent.children.length
+    );
+
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
+  </script>
+</html>

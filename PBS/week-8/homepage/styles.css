@@ -1,0 +1,217 @@
+:root {
+    --marquee-width: 100%;
+    --marquee-height: 10vh;
+    /* --marquee-elements: 12; */ /* defined with JavaScript */
+    --marquee-elements-displayed: 4;
+    --marquee-element-width: calc(
+      var(--marquee-width) / var(--marquee-elements-displayed)
+    );
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 110%;
+  }
+
+  body {
+    overflow-x: hidden;
+    height: 100dvh;
+  }
+
+  .i-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header {
+    width: 100%;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+    background-color: #000;
+  }
+
+  nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  nav ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  a {
+    all: unset;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    transition: 0.15s;
+  }
+
+  a:hover {
+    color: #502acd;
+  }
+  section {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  aside ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem;
+  }
+
+  aside ul li a i {
+    font-size: 2rem;
+  }
+
+  .marquee {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    color: #eee;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee:before,
+  .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, #fff 0%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, #fff 0%, transparent 100%);
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+  }
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(
+        calc(-1 * var(--marquee-element-width) * var(--marquee-elements))
+      );
+    }
+  }
+
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: calc(var(--marquee-height) * 3 / 4); /*5rem*/
+    white-space: nowrap;
+  }
+
+  .marquee-content li img {
+    width: 100%;
+    /* height: 100%; */
+    border: 2px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    html {
+      font-size: 12px;
+    }
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+    .marquee:before,
+    .marquee:after {
+      width: 5rem;
+    }
+  }
+
+  .marquee .marquee-content li span i {
+    cursor: pointer;
+    transition: 0.15s;
+  }
+
+  .marquee .marquee-content li span i:hover {
+    scale: 1.1;
+  }
+
+  #html:hover {
+    color: #e34c26 !important;
+  }
+
+  #css:hover {
+    color: #264de4 !important;
+  }
+
+  #js:hover {
+    color: #f0db4f !important;
+  }
+
+  #bootstrap:hover {
+    color: #563d7c !important;
+  }
+
+  #react:hover {
+    color: #61dbfb !important;
+  }
+
+  #docker:hover {
+    color: #0db7ed !important;
+  }
+
+  .btn {
+    margin-inline: auto;
+  }
